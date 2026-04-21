@@ -1,0 +1,226 @@
+[
+  {
+    "path": "/",
+    "score": 0.93,
+    "performance": 0.84,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.91
+  },
+  {
+    "path": "/guides/adobe/pdf/",
+    "score": 0.96,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/makingof",
+    "score": 0.94,
+    "performance": 0.99,
+    "accessibility": 0.92,
+    "best-practices": 0.96,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/office/",
+    "score": 0.96,
+    "performance": 0.98,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/office/excel/",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/office/powerpoint/",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/office/word/",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/",
+    "score": 0.95,
+    "performance": 0.94,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/android/talkback/",
+    "score": 0.96,
+    "performance": 0.99,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/ios/voiceover/",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/jaws/",
+    "score": 0.96,
+    "performance": 0.99,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/macos/voiceover/",
+    "score": 0.96,
+    "performance": 0.99,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/narrator/",
+    "score": 0.96,
+    "performance": 0.99,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/nvda/",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/wcag/",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/wcag/operable/",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/wcag/perceivable/",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/wcag/robust/",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/wcag/understandable/",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/a",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/abbr",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/address",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/area",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/article",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/aside",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/audio",
+    "score": 0.96,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/b",
+    "score": 0.97,
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  }
+]

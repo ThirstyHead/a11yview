@@ -1,0 +1,994 @@
+[
+  {
+    "path": "/",
+    "score": 0.96,
+    "performance": 0.98,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.91
+  },
+  {
+    "path": "/guides/adobe/pdf/",
+    "score": 0.97,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/makingof",
+    "score": 0.95,
+    "performance": 1,
+    "accessibility": 0.92,
+    "best-practices": 0.96,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/office/",
+    "score": 0.97,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/office/excel/",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/office/powerpoint/",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/office/word/",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/",
+    "score": 0.97,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/android/talkback/",
+    "score": 0.96,
+    "performance": 1,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/ios/voiceover/",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/jaws/",
+    "score": 0.96,
+    "performance": 1,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/macos/voiceover/",
+    "score": 0.96,
+    "performance": 1,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/narrator/",
+    "score": 0.96,
+    "performance": 1,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/screenreaders/nvda/",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/wcag/",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/wcag/operable/",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/wcag/perceivable/",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/wcag/robust/",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/guides/wcag/understandable/",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/a",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/abbr",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/address",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/area",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/article",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/aside",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/audio",
+    "score": 0.97,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/b",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/base",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/bdi",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/bdo",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/blockquote",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/body",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/br",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/button",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/canvas",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/caption",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/cite",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/code",
+    "score": 0.96,
+    "performance": 1,
+    "accessibility": 0.92,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/col",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/colgroup",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/data",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/datalist",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/dd",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/del",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/details",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/dfn",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/dialog",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/div",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/dl",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/dt",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/em",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/embed",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/fieldset",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/figcaption",
+    "score": 0.97,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.91
+  },
+  {
+    "path": "/html/figure",
+    "score": 0.97,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.91
+  },
+  {
+    "path": "/html/footer",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/form",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/head",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/header",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/hgroup",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/hr",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/html",
+    "score": 0.96,
+    "performance": 1,
+    "accessibility": 0.92,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/i",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/iframe",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/img",
+    "score": 0.97,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.91
+  },
+  {
+    "path": "/html/input",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/ins",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/kbd",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/label",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/legend",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/li",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/link",
+    "score": 0.96,
+    "performance": 1,
+    "accessibility": 0.92,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/main",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/map",
+    "score": 0.96,
+    "performance": 1,
+    "accessibility": 0.92,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/mark",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/menu",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/meta",
+    "score": 0.96,
+    "performance": 1,
+    "accessibility": 0.92,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/meter",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/nav",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/noscript",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/object",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/ol",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/optgroup",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/option",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/output",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/p",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/picture",
+    "score": 0.97,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.91
+  },
+  {
+    "path": "/html/pre",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/progress",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/q",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/ruby",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/s",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/samp",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/script",
+    "score": 0.96,
+    "performance": 1,
+    "accessibility": 0.92,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/search",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/section",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/select",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/slot",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/small",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/source",
+    "score": 0.97,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.91
+  },
+  {
+    "path": "/html/span",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/strong",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/style",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/sub",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/summary",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/sup",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/table",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/tbody",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/td",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/template",
+    "score": 0.96,
+    "performance": 1,
+    "accessibility": 0.95,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/textarea",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/tfoot",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/th",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/thead",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/time",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/title",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.91
+  },
+  {
+    "path": "/html/tr",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/track",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/u",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/ul",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/var",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/video",
+    "score": 0.97,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 0.96,
+    "seo": 0.9
+  },
+  {
+    "path": "/html/wbr",
+    "score": 0.98,
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.9
+  }
+]
