@@ -1,5 +1,5 @@
 /**
- * WCAG 2.1 AA audit for the configured site (see college.json at the repo root)
+ * WCAG 2.1 AA audit for the configured site (see site.json at the repo root)
  * Run: node audit/axe-audit.mjs
  * Output: timestamped artifacts in audit/reports/ + human summary on stdout.
  *
@@ -15,21 +15,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'url';
 import config from './config.mjs';
+import { slugFor } from './slug.mjs';
+import { loadTargetUrls } from './targets.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPORTS = path.join(__dirname, 'reports');
 fs.mkdirSync(REPORTS, { recursive: true });
 
-const BASE = config.baseUrl;
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
 const SEVERITY_ORDER = ['critical', 'serious', 'moderate', 'minor'];
-
-// slug from a URL path: /about/frcc-foundation/giving/donate.html -> about-frcc-foundation-giving-donate
-function slugFor(url) {
-  const p = new URL(url).pathname;
-  const s = p.replace(/^\//, '').replace(/\/+$/, '').replace(/[^a-zA-Z0-9-]+/g, '-');
-  return s || 'home';
-}
 
 async function auditPage(browser, url) {
   const context = await browser.newContext({
@@ -133,30 +127,22 @@ function printSummary(pages) {
   for (const [id, n] of sorted) console.log(`  ${id}: ${n}`);
 }
 
-// Target URLs, highest precedence first:
+// Target URLs, highest precedence first (resolved in audit/targets.mjs):
 //   1. Explicit CLI args  ->  node audit/axe-audit.mjs <url> [url...]
 //   2. audit/pages.json   ->  { baseUrl, pages: [path | url | { path|url, ... }] }
-//   3. Legacy hardcoded fallback
-const PAGES_CONFIG = path.join(__dirname, 'pages.json');
-function loadTargetUrls(cliArgs) {
-  if (cliArgs.length) return cliArgs;
-  if (fs.existsSync(PAGES_CONFIG)) {
-    const cfg = JSON.parse(fs.readFileSync(PAGES_CONFIG, 'utf8'));
-    const base = cfg.baseUrl || BASE;
-    const urls = (cfg.pages || []).map((p) =>
-      typeof p === 'string'
-        ? /^https?:/i.test(p)
-          ? p
-          : new URL(p, base).toString()
-        : p.url
-          ? p.url
-          : new URL(p.path, base).toString(),
-    );
-    if (urls.length) return [...new Set(urls)];
-  }
-  return [BASE, `${BASE}/about`, `${BASE}/admissions`, `${BASE}/programs`];
+// There is deliberately NO hardcoded fallback site: a generic tool must fail
+// loudly rather than audit an unexpected website.
+const targetUrls = loadTargetUrls(process.argv.slice(2), {
+  pagesFile: config.pagesFile,
+  baseUrl: config.baseUrl,
+});
+if (!targetUrls) {
+  console.error(
+    'No target URLs: pass one or more URLs as CLI arguments, or define ' +
+      `"pages" in ${config.pagesFile}.`,
+  );
+  process.exit(1);
 }
-const targetUrls = loadTargetUrls(process.argv.slice(2));
 
 const browser = await chromium.launch();
 const pages = [];
