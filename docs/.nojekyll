@@ -1,0 +1,3 @@
+# This dashboard is pre-built static HTML. Skip Jekyll so GitHub Pages serves
+# docs/ byte-for-byte (no front-matter processing, no relative-link rewrites).
+# Without this, the internal pages build runs Jekyll on the folder.
