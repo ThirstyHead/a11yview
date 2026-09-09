@@ -1,0 +1,37 @@
+{
+  "siteGenerated": "2026-09-09T21:01:11.133Z",
+  "series": [
+    {
+      "generated": "2026-09-09T20:30:44.965Z",
+      "reportFile": "axe-2026-09-09T20-30-44-965Z.json",
+      "pagesAudited": 1,
+      "pagesFailed": 0,
+      "pagesBlocked": 0,
+      "cleanPages": 1,
+      "totalViolations": 0,
+      "bySeverity": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "needsReview": 0
+    },
+    {
+      "generated": "2026-09-09T21:01:11.075Z",
+      "reportFile": "axe-2026-09-09T21-01-11-075Z.json",
+      "pagesAudited": 1,
+      "pagesFailed": 0,
+      "pagesBlocked": 0,
+      "cleanPages": 1,
+      "totalViolations": 0,
+      "bySeverity": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "needsReview": 0
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "siteGenerated": "2026-09-09T21:01:11.133Z",
+  "sourceRepo": "https://github.com/ThirstyHead/a11yview",
+  "report": {
+    "generated": "2026-09-09T21:01:11.075Z",
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "pages": [
+      {
+        "url": "https://thirstyhead.com/",
+        "title": "ThirstyHead",
+        "finalUrl": "https://thirstyhead.com/",
+        "slug": "home",
+        "violations": [],
+        "violationTotal": 0,
+        "incomplete": []
+      }
+    ],
+    "pagesHtml": {
+      "https://thirstyhead.com/": "pages/home.html"
+    }
+  }
+}
