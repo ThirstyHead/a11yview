@@ -1,7 +1,7 @@
 /**
- * Page-scope discovery for the configured college (see college.json at repo root).
+ * Page-scope discovery for the configured site (see site.json at repo root).
  *
- * One-time curation AID — not part of the CI pipeline. Crawls the college
+ * One-time curation AID — not part of the CI pipeline. Crawls the site's
  * homepage, resolves every <a href>, keeps only the in-scope host, drops
  * non-HTML assets and JS template placeholders, dedupes /x/ vs /x/index.html,
  * then VERIFIES each candidate returns HTTP 200 before writing it out — so
@@ -14,7 +14,7 @@
  *   --out           Where to write the generated pages.json (default:
  *                    audit/pages.json.candidates — never overwrites the
  *                    curated pages.json without --force).
- *   --host          Exact host to keep (www stripped). Default: college.json
+ *   --host          Exact host to keep (www stripped). Default: site.json
  *                    domain. Pass deliberately to broaden/narrow scope.
  *   --concurrency   Parallel 200-checks (default 5; keep low — be polite).
  *   --limit         Stop after N verified pages (default: none).
