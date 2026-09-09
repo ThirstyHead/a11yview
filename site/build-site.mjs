@@ -37,16 +37,14 @@ import { fileURLToPath } from 'url';
 import config from '../audit/config.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const TOOLS_REPO = config.toolsRepoUrl;
+const TOOLS_REPO = config.repoUrl; // null when run outside a git repo / CI — links degrade gracefully
 
-// Severity colors follow the CCCS brand (see :root in renderSite). Critical
-// maps to CCCS navy, serious to the brand orange, moderate to a dark amber
-// (AA on white), minor to CCCS gray-blue.
+// Neutral severity palette (WCAG AA contrast on white, matches axe impact semantics).
 const SEVERITY_META = [
-  ['critical', '#03202F', 'Critical'],
-  ['serious', '#D74026', 'Serious'],
-  ['moderate', '#7A5200', 'Moderate'],
-  ['minor', '#394A58', 'Minor'],
+  ['critical', '#B91C1C', 'Critical'],
+  ['serious', '#C2410C', 'Serious'],
+  ['moderate', '#A16207', 'Moderate'],
+  ['minor', '#1D4ED8', 'Minor'],
 ];
 
 // ---------- args ----------
@@ -217,7 +215,7 @@ function renderSite({ latest, history, args, report }) {
   const siteName = args['site-name'] || config.siteName;
   const siteUrl = args['site-url'] || config.baseUrl;
   const rawBase =
-    args['raw-base'] || `${config.resultsRepoUrl}/blob/main/reports`;
+    args['raw-base'] || (config.rawReportsUrl ? config.rawReportsUrl.replace('/tree/', '/blob/') : 'reports');
 
   const prev = history.length >= 2 ? history[history.length - 2] : null;
   const delta = prev ? latest.totalViolations - prev.totalViolations : null;
@@ -253,50 +251,44 @@ function renderSite({ latest, history, args, report }) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WCAG 2.1 AA Audit — ${esc(siteName)} (${esc(siteUrl)})</title>
-<meta name="description" content="Automated weekly WCAG 2.1 AA accessibility audit results for ${esc(siteUrl)}, produced with axe-core.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Automated WCAG 2.1 AA accessibility audit results for ${esc(siteUrl)}, produced with axe-core.">
 <style>
   :root {
     color-scheme: light;
-    /* CCCS brand palette (source: cccs.edu theme --wp--preset--color--*) */
-    --cccs-blue: #004165;
-    --cccs-navy: #03202F;
-    --cccs-gray-blue: #394A58;
-    --cccs-yellow: #FFCB4F;
-    --cccs-tan: #D7D3C7;
-    --cccs-soft-yellow: #FADD80;
-    --cccs-turquoise: #03738C;
-    --cccs-orange: #D74026;
+    /* Neutral palette — no org branding: this tool is generic. All text on white
+       meets WCAG AA (4.5:1) for body copy; large numerals pass 3:1. */
+    --primary: #1D4ED8;
+    --ink: #111827;
+    --text: #374151;
+    --text-muted: #6B7280;
+    --text-faint: #9CA3AF;
+    --link: #1D4ED8;
+    --border: #E5E7EB;
+    --row-head: #F3F4F6;
+    --accent: #F59E0B;
+    --down: #15803D;
+    --up: #B91C1C;
     --bg: #ffffff;
-    --text: #394A58;
-    --text-strong: #03202F;
-    --text-muted: #566573;
-    --text-faint: #7B8A8B;
-    --link: #004165;
-    --border: #e3e1da;
-    --row-head: #eff2f4;
+    --text-strong: #111827;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0; padding: 0; background: var(--bg); color: var(--text);
-    font: 16px/1.55 "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
   .wrap { max-width: 940px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
-  /* header band mirrors the cccs.edu site header: blue -> navy, yellow rule */
-  .site-header { background: linear-gradient(to right, var(--cccs-blue), var(--cccs-navy));
-                 border-bottom: 5px solid var(--cccs-yellow); padding: 2rem 1.25rem; }
+  .site-header { background: linear-gradient(to right, var(--primary), var(--ink));
+                 border-bottom: 4px solid var(--accent); padding: 2rem 1.25rem; }
   .site-header h1 { font-size: 1.7rem; font-weight: 700; text-transform: uppercase;
                     letter-spacing: .02em; color: #fff; margin: 0 0 .3rem; }
   .site-header .sub { color: rgba(255,255,255,.85); margin: 0; font-weight: 500; }
-  .site-header .sub a { color: var(--cccs-yellow); font-weight: 600; }
+  .site-header .sub a { color: #fff; text-decoration: underline; font-weight: 600; }
   .meta { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; color: var(--text-muted); font-size: .92rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem; }
   .meta a { color: var(--link); font-weight: 600; }
   a { color: var(--link); font-weight: 600; text-decoration: none; }
-  a:hover { text-decoration: underline; text-decoration-color: var(--cccs-yellow); text-decoration-thickness: 2px; }
+  a:hover { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .75rem; margin-bottom: 1rem; }
-  .card { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--cccs-turquoise); border-radius: 6px; padding: .9rem 1rem; }
+  .card { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--primary); border-radius: 6px; padding: .9rem 1rem; }
   .card .num { display: block; font-size: 1.9rem; font-weight: 700; line-height: 1.2; color: var(--text-strong); }
   .card .lbl { color: var(--text-muted); font-size: .85rem; }
   .sevcard { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: .6rem .8rem; display: flex; align-items: baseline; gap: .5rem; }
@@ -307,7 +299,7 @@ function renderSite({ latest, history, args, report }) {
   .spark { width: 100%; max-width: 680px; height: auto; background: #fff; border: 1px solid var(--border); border-radius: 6px; }
   .axis { font-size: 11px; fill: var(--text-muted); }
   .delta { font-size: .9rem; font-weight: 600; }
-  .delta.up { color: var(--cccs-orange); } .delta.down { color: #1E8449; }
+  .delta.up { color: var(--up); } .delta.down { color: var(--down); }
   .delta.flat, .delta.first { color: var(--text-muted); font-weight: 500; }
   .page { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.25rem 1.25rem; margin-bottom: 1rem; }
   .page.failed { border-color: #f0b27a; background: #fef9f3; }
@@ -316,8 +308,8 @@ function renderSite({ latest, history, args, report }) {
   .page h4 { margin: 1rem 0 .5rem; font-size: .95rem; color: var(--text-strong); }
   .count { color: var(--text-faint); font-weight: 500; font-size: .85rem; }
   .total { margin: 0 0 .5rem; color: var(--text-muted); }
-  .clean { color: #1E8449; font-weight: 600; }
-  .warn { color: var(--cccs-orange); font-weight: 600; }
+  .clean { color: var(--down); font-weight: 600; }
+  .warn { color: var(--up); font-weight: 600; }
   table { width: 100%; border-collapse: collapse; font-size: .9rem; }
   th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid #eef1f2; vertical-align: top; }
   th { color: var(--text); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .03em; }
@@ -331,22 +323,21 @@ function renderSite({ latest, history, args, report }) {
     border-bottom: 2px solid var(--border);
   }
   table.pages th.n, table.pages td.n { text-align: right; white-space: nowrap; }
-  table.pages td.n.bad { color: var(--cccs-orange); font-weight: 700; }
+  table.pages td.n.bad { color: var(--up); font-weight: 700; }
   table.pages td.pg { max-width: 0; }
   table.pages td.pg a { word-break: break-all; }
   table.pages .pwurl { display: block; color: var(--text-faint); font-size: .8rem; margin-top: .1rem; word-break: break-all; }
   table.pages td.pg .err { word-break: break-all; }
   table.pages td.links { white-space: nowrap; text-align: right; }
   table.pages a.pgrep {
-    color: var(--cccs-blue); font-weight: 600;
+    color: var(--primary); font-weight: 600;
     border: 1px solid #cfe6f5; background: #eff6f9; padding: .15rem .5rem; border-radius: 6px;
   }
   table.pages a.pgrep:hover { background: #dcebf1; }
-  table.pages tr.bad td.pg a { color: var(--cccs-orange); }
-  /* footer band mirrors the cccs.edu footer: tan background, navy text */
-  footer { margin-top: 2.5rem; background: var(--cccs-tan); color: var(--cccs-navy);
-           border-top: 5px solid var(--cccs-yellow); padding: 1.5rem 1.25rem; font-size: .85rem; }
-  footer a { color: var(--cccs-blue); font-weight: 600; }
+  table.pages tr.bad td.pg a { color: var(--up); }
+  footer { margin-top: 2.5rem; background: var(--row-head); color: var(--ink);
+           border-top: 4px solid var(--accent); padding: 1.5rem 1.25rem; font-size: .85rem; }
+  footer a { color: var(--primary); font-weight: 600; }
   .datamenu { display: flex; flex-wrap: wrap; gap: 1rem; margin: .5rem 0; }
   table.pages tr.caveat td.pg .caveat-err { color: #7A5200; word-break: break-all; }
   .caveat-badge { background: #fff6e5; color: #7A5200; border: 1px solid #f0d9a8; padding: .1rem .4rem; border-radius: 4px; font-weight: 600; white-space: nowrap; }
@@ -361,7 +352,7 @@ function renderSite({ latest, history, args, report }) {
 <div class="meta">
   <span>Last audited: <strong>${latestDate}</strong> (UTC)</span>
   <span>Published runs: ${history.length}</span>
-  <span>Tooling: <a href="${TOOLS_REPO}">axe-core + Playwright</a>, run weekly via GitHub Actions</span>
+  <span>Tooling: ${TOOLS_REPO ? `<a href="${TOOLS_REPO}">axe-core + Playwright</a>` : 'axe-core + Playwright'}, run weekly via GitHub Actions</span>
   <span>${deltaHtml}</span>
 </div>
 
@@ -387,14 +378,14 @@ ${coverageCaveats(report)}
   <a href="latest.json">latest.json</a>
   <a href="history.json">history.json</a>
   <a href="${esc(rawBase)}/${esc(latest.reportFile)}">Raw report (latest)</a>
-  <a href="${esc(config.resultsRepoUrl)}/tree/main/reports">All raw reports</a>
+  ${config.rawReportsUrl ? `<a href="${esc(config.rawReportsUrl)}">All raw reports</a>` : ''}
 </div>
 </div>
 <footer>
   <p><strong>About this audit.</strong> Results are produced automatically by
   <a href="https://github.com/dequelabs/axe-core">axe-core</a> (Deque) against the WCAG 2.1 A/AA rule set,
   on a weekly schedule, by the open-source tooling in
-  <a href="${TOOLS_REPO}">${TOOLS_REPO.replace('https://github.com/', '')}</a>.
+  ${TOOLS_REPO ? `<a href="${TOOLS_REPO}">${TOOLS_REPO.replace('https://github.com/', '')}</a>` : 'this repository'}.
   Automated tooling detects only a subset of accessibility failures and does not replace
   manual or assistive-technology testing. “Needs manual review” items are results axe
   could not determine automatically.</p>

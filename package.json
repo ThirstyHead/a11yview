@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "audit": "node audit/axe-audit.mjs",
-    "test": "node audit/axe-audit.mjs",
-    "site:build": "node site/build-site.mjs",
-    "unit": "node --test tests/"
+    "build": "node site/build-site.mjs",
+    "test": "node --test \"tests/*.test.mjs\""
   },
   "license": "ISC",
   "devDependencies": {
