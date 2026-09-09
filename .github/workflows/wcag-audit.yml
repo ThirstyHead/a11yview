@@ -1,0 +1,83 @@
+name: WCAG audit
+
+on:
+  schedule:
+    # Mondays 06:00 UTC (midnight–1am in most US time zones)
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  # Single-repo design: results are committed back to THIS repo, so the
+  # built-in GITHUB_TOKEN (contents: write) can push them. No RESULTS_TOKEN
+  # secret, no sibling repo.
+  contents: write
+
+concurrency:
+  group: wcag-audit
+  cancel-in-progress: false
+
+jobs:
+  audit-and-publish:
+    name: Audit & publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright (Chromium)
+        run: npx playwright install --with-deps chromium
+
+      - name: Run unit tests
+        run: node --test "tests/*.test.mjs"
+
+      - name: Run WCAG 2.1 AA audit
+        run: npm run audit
+
+      - name: Publish results to this repo
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          # The checkout IS the results repo: copy the latest report into the
+          # committed history (reports/), rebuild the dashboard (docs/), push.
+          REPORT="$(ls -t audit/reports/axe-*.json 2>/dev/null | head -n 1 || true)"
+          if [ -z "${REPORT}" ]; then
+            echo "::error::No audit report produced — nothing to publish."
+            exit 1
+          fi
+          # Advisory guard: if EVERY page was blocked (WAF/404/captcha wall),
+          # publishing would replace the last good report with "0 audited".
+          # Log loudly and SKIP the publish; the previous results stay live.
+          # (readFileSync with an explicit path — never require() here: a
+          # bare relative name resolves through node_modules and false-positives.)
+          if node -e 'const r=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")); const p=r.pages||[]; const ok=p.filter(x=>!x.blocked&&!x.error).length; if(!p.length||!ok){ process.stdout.write(`ALL-BLOCKED ${ok}/${p.length}\n`); process.exit(3);} ' "${REPORT}"; then :; else
+            echo "::warning::Audit blocked every page (WAF/404/captcha) — SKIPPING publish so the previous good report stays live. Re-run when the site is reachable."
+            exit 0
+          fi
+          echo "Publishing $(basename "${REPORT}")"
+          mkdir -p reports
+          cp "${REPORT}" reports/
+          node site/build-site.mjs \
+            --report "${REPORT}" \
+            --history-dir reports \
+            --out docs \
+            --pages-dir "${REPORT%/*}/pages" \
+            --raw-base "https://github.com/${GITHUB_REPOSITORY}/blob/main/reports"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+          else
+            git commit -m "audit: $(date -u +%Y-%m-%d) $(date -u +%H:%M UTC)"
+            git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
+          fi
