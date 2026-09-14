@@ -1,5 +1,5 @@
 {
-  "siteGenerated": "2026-09-09T21:27:48.946Z",
+  "siteGenerated": "2026-09-14T11:22:52.005Z",
   "series": [
     {
       "generated": "2026-09-09T20:30:44.965Z",
@@ -36,6 +36,22 @@
     {
       "generated": "2026-09-09T21:27:48.841Z",
       "reportFile": "axe-2026-09-09T21-27-48-841Z.json",
+      "pagesAudited": 1,
+      "pagesFailed": 0,
+      "pagesBlocked": 0,
+      "cleanPages": 1,
+      "totalViolations": 0,
+      "bySeverity": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "needsReview": 0
+    },
+    {
+      "generated": "2026-09-14T11:22:51.872Z",
+      "reportFile": "axe-2026-09-14T11-22-51-872Z.json",
       "pagesAudited": 1,
       "pagesFailed": 0,
       "pagesBlocked": 0,
